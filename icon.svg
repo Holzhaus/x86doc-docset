@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128px"
+   height="128px"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/jan/Projekte/intel-asm-docset/icon.png"
+   inkscape:export-xdpi="24.000002"
+   inkscape:export-ydpi="24.000002">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="87.792893"
+     inkscape:cy="46.015625"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1580"
+     inkscape:window-height="858"
+     inkscape:window-x="9"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     inkscape:grid-bbox="true" />
+  <defs
+     id="defs815">
+    <linearGradient
+       id="linearGradient1624"
+       inkscape:collect="always">
+      <stop
+         id="stop1620"
+         offset="0"
+         style="stop-color:#303030;stop-opacity:1" />
+      <stop
+         id="stop1622"
+         offset="1"
+         style="stop-color:#505050;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1420">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1416" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1418" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1420"
+       id="linearGradient1422"
+       x1="27.400606"
+       y1="96.555761"
+       x2="156.35635"
+       y2="96.555761"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1610">
+      <feFlood
+         flood-opacity="0.25"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1600" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1602" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="5"
+         result="blur"
+         id="feGaussianBlur1604" />
+      <feOffset
+         dx="2"
+         dy="2"
+         result="offset"
+         id="feOffset1606" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1608" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1624"
+       id="linearGradient1618"
+       x1="18.046877"
+       y1="16.890617"
+       x2="118.39064"
+       y2="117.4375"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0666666,0,0,1.0666666,-4.2666664,-4.2666583)" />
+  </defs>
+  <metadata
+     id="metadata818">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Ebene 1">
+    <rect
+       style="opacity:1;fill:url(#linearGradient1618);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1374"
+       width="128"
+       height="128"
+       x="0"
+       y="0"
+       rx="16"
+       ry="16" />
+    <g
+       id="g1406"
+       transform="matrix(0.83725475,0,0,0.8369922,-12.92569,14.615297)"
+       style="fill:#ffffff;fill-opacity:1;stroke:#fbffff;stroke-width:1.19456697;stroke-opacity:1;filter:url(#filter1610)">
+      <text
+         id="text1378"
+         y="126.08197"
+         x="60.105026"
+         style="font-style:normal;font-weight:normal;font-size:92.99593353px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#fbffff;stroke-width:1.19456685px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Bold';letter-spacing:-10.77125931px;fill:#ffffff;fill-opacity:1;stroke:#fbffff;stroke-width:1.19456685px;stroke-opacity:1"
+           y="126.08197"
+           x="60.105026"
+           id="tspan1376"
+           sodipodi:role="line">86</tspan></text>
+      <text
+         id="text1400"
+         y="127.14037"
+         x="25.17676"
+         style="font-style:normal;font-weight:normal;font-size:75.74073792px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#fbffff;stroke-width:1.19456697px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro Bold';fill:#ffffff;fill-opacity:1;stroke:#fbffff;stroke-width:1.19456697px;stroke-opacity:1"
+           y="127.14037"
+           x="25.17676"
+           id="tspan1398"
+           sodipodi:role="line">x</tspan></text>
+    </g>
+  </g>
+</svg>
