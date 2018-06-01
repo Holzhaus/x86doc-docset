@@ -1,0 +1,6 @@
+# Generated docsets
+*.docset
+
+# Generated docset archives
+*.tgz
+*.tar.gz
