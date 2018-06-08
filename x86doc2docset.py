@@ -130,8 +130,9 @@ def main(args=None):
     indexpath = os.path.join(docset_root, DOCPATH, 'index.html')
 
     logging.basicConfig(level=logging.INFO)
+    root = os.path.dirname(indexpath) if not p_args.no_combined else None
     with open(indexpath, mode='r') as f:
-        update_db(dbpath, parse_index(f, root=os.path.dirname(indexpath)),
+        update_db(dbpath, parse_index(f, root=root),
                   commit=not p_args.dry_run)
 
 
