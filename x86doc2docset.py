@@ -32,9 +32,10 @@ DOCPATH = 'Contents/Resources/Documents'
 DOCSET = 'Intel_x86_IA32'
 DOCSET_DIR = '%s.docset' % DOCSET
 INSTR_PATTERN = re.compile(r'^(?:\./)?(?P<filename>[\w:-]+\.html)$')
+SIMPLE_INSTR_PATTERN = re.compile(r'^[A-Z0-9x-]+$')
 
 
-def parse_index(fp):
+def parse_index(fp, root=None):
     logger = logging.getLogger(__name__)
     soup = bs4.BeautifulSoup(fp, 'html.parser')
     for i, tag in enumerate(soup.find_all('a', {'href': INSTR_PATTERN})):
@@ -50,8 +51,40 @@ def parse_index(fp):
         if path == 'index.html':
             continue
 
-        logger.info('Found "%s" (path: %s)', name, path)
-        yield (name, 'instruction', path)
+        for instr in name.split(':'):
+            if SIMPLE_INSTR_PATTERN.match(instr):
+                logger.info('Found "%s" (path: %s)', instr, path)
+                yield (instr, 'instruction', path)
+            elif root:
+                try:
+                    with open(os.path.join(root, path), mode='r') as f:
+                        yield from ((x, 'instruction', path)
+                                    for x in parse_combined(f))
+                except ValueError:
+                    logger.warning('Did not find table column index for '
+                                   'combined instruction "%s", add it as '
+                                   'a simple instruction instead', instr)
+                    yield (instr, 'instruction', path)
+
+
+def parse_combined(fp):
+    logger = logging.getLogger(__name__)
+    soup = bs4.BeautifulSoup(fp, 'html.parser')
+    table = soup.table
+    colnames = [t.string for t in table.tr.find_all('th')]
+    colindex = colnames.index('Instruction')
+
+    found = set()
+    for td in table.select('tr > td:nth-of-type(%d)' % (colindex+1)):
+        matchobj = re.match(r'[A-Z0-9-]+', td.text)
+        if not matchobj:
+            continue
+
+        name = matchobj.group(0)
+        if name not in found:
+            logger.info('Found part "%s" of combined instruction', name)
+            found.add(name)
+            yield name
 
 
 def update_db(dbpath, data, commit=True):
@@ -91,6 +124,8 @@ def main(args=None):
                         help='root path of the docset')
     parser.add_argument('-n', '--dry-run', action='store_true',
                         help='do not write changes to the database')
+    parser.add_argument('-c', '--no-combined', action='store_true',
+                        help='do not parse combined instructions')
     p_args = parser.parse_args(args)
 
     docset_root = os.path.join(p_args.root, DOCSET_DIR)
@@ -99,7 +134,8 @@ def main(args=None):
 
     logging.basicConfig(level=logging.INFO)
     with open(indexpath, mode='r') as f:
-        update_db(dbpath, parse_index(f), commit=not p_args.dry_run)
+        update_db(dbpath, parse_index(f, root=os.path.dirname(indexpath)),
+                  commit=not p_args.dry_run)
 
 
 if __name__ == '__main__':
