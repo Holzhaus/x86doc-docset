@@ -52,19 +52,16 @@ def parse_index(fp, root=None):
             continue
 
         for instr in name.split(':'):
-            if SIMPLE_INSTR_PATTERN.match(instr):
-                logger.info('Found "%s" (path: %s)', instr, path)
-                yield (instr, 'instruction', path)
-            elif root:
+            logger.info('Found "%s" (path: %s)', instr, path)
+            yield (instr, 'instruction', path)
+            if root and not SIMPLE_INSTR_PATTERN.match(instr):
                 try:
                     with open(os.path.join(root, path), mode='r') as f:
                         yield from ((x, 'instruction', path)
                                     for x in parse_combined(f))
                 except ValueError:
                     logger.warning('Did not find table column index for '
-                                   'combined instruction "%s", add it as '
-                                   'a simple instruction instead', instr)
-                    yield (instr, 'instruction', path)
+                                   'combined instruction "%s"', instr)
 
 
 def parse_combined(fp):
