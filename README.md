@@ -7,3 +7,9 @@ Since there seems to be no official HTML documentation by Intel, this uses the *
 The HTML docs are also available [online](http://www.felixcloutier.com/x86/).
 
 You can use the [`gen-docset.sh`](gen-docset.sh) script to (re-)generate the docset.
+
+It's possible to add the docset to your reader via this feed:
+
+```
+https://homepage.ruhr-uni-bochum.de/jan.holthuis/downloads/Intel_x86_IA32.xml
+```
